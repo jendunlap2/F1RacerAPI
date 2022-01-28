@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/main.js" defer></script>
+    <title>F1 Racer API</title>
+</head>
+<body>
+    <div class="container">
+
+        <h1 class="display-4 p-3 mb-2 bg-secondary text-white">F1 Racer Data</h1>
+        <!-- Form -->
+        <form action="" id="racerForm">
+            <div class="row">
+                <div class="col">
+                    <label class="form-control-lg" for="season">Season</label>
+                    <input type="text" class="form-control form-control-md" id="raceSeason">
+                </div>
+                <div class="col">
+                    <label class="form-control-lg"for="round">Round</label>
+                    <input type="text" class="form-control form-control-md" id="raceRound">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col my-4">
+                    <input type="submit" value="Search" class="btn btn-primary btn-lg">
+                </div>
+            </div>
+        </form>
+
+        <!-- Display Results -->
+        <table id="raceResults" class="table">
+            <thead><thead>
+            <tbody></tbody>
+        </table>
+
+    </div> <!-- End of container div -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>
