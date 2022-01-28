@@ -15,7 +15,9 @@ function generateTable(results){
     let raceResults = document.querySelector('#raceTable');
     // ROW 1 -- HEADER ROW
     let headerRow = document.createElement('thead');
-    raceResults.append(headerRow)
+    headerRow.setAttribute("font-weight", "bold");
+    raceResults.append(headerRow);
+
     
     let header1 = document.createElement('td');
     header1.innerText = `Position`
@@ -42,49 +44,45 @@ function generateTable(results){
     header8.innerText = `Constructor`
     raceResults.append(header8)
 
-    //    ROW 2    //////////////////////////////////
-    let row2 = document.createElement('tr');
-    raceResults.append(row2);
+    //   LOOP THROUGH 7 records ; if record exists, add to table    //////////////////////////////////
+    for(i = 0; i < 7; i++){
+        if(results.MRData.StandingsTable.StandingsLists[0].DriverStandings[i].position){
+            let row2 = document.createElement('tr');
+            raceResults.append(row2);
 
-    let position1 = document.createElement('td');
-    position1.innerText = `${results.MRData.StandingsTable.StandingsLists[0].DriverStandings[0].position}`;
-    raceResults.append(position1);
+            let position1 = document.createElement('td');
+            position1.innerText = `${results.MRData.StandingsTable.StandingsLists[0].DriverStandings[i].position}`;
+            raceResults.append(position1);
 
-    let points1 = document.createElement('td');
-    points1.innerText = `${results.MRData.StandingsTable.StandingsLists[0].DriverStandings[0].points}`;
-    raceResults.append(points1);
+            let points1 = document.createElement('td');
+            points1.innerText = `${results.MRData.StandingsTable.StandingsLists[0].DriverStandings[i].points}`;
+            raceResults.append(points1);
 
-    let wins1 = document.createElement('td');
-    wins1.innerText = `${results.MRData.StandingsTable.StandingsLists[0].DriverStandings[0].wins}`;
-    raceResults.append(wins1);
+            let wins1 = document.createElement('td');
+            wins1.innerText = `${results.MRData.StandingsTable.StandingsLists[0].DriverStandings[i].wins}`;
+            raceResults.append(wins1);
 
-    let firstName1 = document.createElement('td');
-    firstName1.innerText = `${results.MRData.StandingsTable.StandingsLists[0].DriverStandings[0].Driver.givenName}`;
-    raceResults.append(firstName1);
+            let firstName1 = document.createElement('td');
+            firstName1.innerText = `${results.MRData.StandingsTable.StandingsLists[0].DriverStandings[i].Driver.givenName}`;
+            raceResults.append(firstName1);
 
-    let lastName1 = document.createElement('td');
-    lastName1.innerText = `${results.MRData.StandingsTable.StandingsLists[0].DriverStandings[0].Driver.familyName}`;
-    raceResults.append(lastName1);
+            let lastName1 = document.createElement('td');
+            lastName1.innerText = `${results.MRData.StandingsTable.StandingsLists[0].DriverStandings[i].Driver.familyName}`;
+            raceResults.append(lastName1);
 
-    let dob1 = document.createElement('td');
-    dob1.innerText = `${results.MRData.StandingsTable.StandingsLists[0].DriverStandings[0].Driver.dateOfBirth}`;
-    raceResults.append(dob1);
+            let dob1 = document.createElement('td');
+            dob1.innerText = `${results.MRData.StandingsTable.StandingsLists[0].DriverStandings[i].Driver.dateOfBirth}`;
+            raceResults.append(dob1);
 
-    let nationality1 = document.createElement('td');
-    nationality1.innerText = `${results.MRData.StandingsTable.StandingsLists[0].DriverStandings[0].Driver.nationality}`;
-    raceResults.append(nationality1);
+            let nationality1 = document.createElement('td');
+            nationality1.innerText = `${results.MRData.StandingsTable.StandingsLists[0].DriverStandings[i].Driver.nationality}`;
+            raceResults.append(nationality1);
 
-    let constructor1 = document.createElement('td');
-    constructor1.innerText = `${results.MRData.StandingsTable.StandingsLists[0].DriverStandings[0].Constructors[0].constructorId}`;
-    raceResults.append(constructor1);
-
-    //    ROW 3    //////////////////////////////////
-    let row3 = document.createElement('tr');
-    raceResults.append(row3);
-
-    let position2 = document.createElement('td');
-    position2.innerText = `${results.MRData.StandingsTable.StandingsLists[0].DriverStandings[1].position}`;
-    raceResults.append(position2);
+            let constructor1 = document.createElement('td');
+            constructor1.innerText = `${results.MRData.StandingsTable.StandingsLists[0].DriverStandings[i].Constructors[0].constructorId}`;
+            raceResults.append(constructor1);
+        }
+    }
 
 }
 
