@@ -10,7 +10,13 @@ const getF1RacerAPI = async function(raceSeason, raceRound){
 const racerForm = document.getElementById('racerForm');
 
 function addToTable(results){
-    document.getElementById("raceResults").innerHTML = "";
+    document.getElementById("raceTable").innerHTML = "";
+    let raceResults = document.querySelector('#raceTable');
+    let output = document.createElement('thead');
+    output.innerText = `Position : ${results.MRData.StandingsTable.StandingsLists.DriverStandings.position}`
+    raceResults.append(output)
+
+
 
     // var table = document.getElementById("raceReslts");
     // var header = table.createTHead();
@@ -19,11 +25,11 @@ function addToTable(results){
     // cell.innerHTML = `${results.data}`
   
 
-    let raceResults = document.getElementById('#raceResults');
-    let tHeader = document.createElement('thead');
-    tHeader.innerText = "Position"
-    let cell = document.createElement('td')
-    cell.innerText = `${results}`;
+    // let raceTable = document.getElementById('#raceTable');
+    // let tHeader = document.createElement('thead');
+    // tHeader.innerText = "Position"
+    // let cell = document.createElement('td')
+    // cell.innerText = `${results}`;
 
 }
 
